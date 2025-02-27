@@ -26,6 +26,16 @@ namespace EmployeeManagerAPI.Services
       {
          return _employeesRepository.AddEmployee(employee);
       }
+
+      public Employee UpdateEmployee(Employee employee)
+      {
+         return _employeesRepository.UpdateEmployee(employee);
+      }
+
+      public void DeleteEmployee(int id)
+      {
+         _employeesRepository.DeleteEmployee(id);
+      }
    }
 
 }

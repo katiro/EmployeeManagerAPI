@@ -38,18 +38,19 @@ namespace EmployeeManagerAPI.Controllers
             return _employeeService.AddEmployee(employee);
         }
 
-/*
-        [HttpPut]
+
+        [HttpPut("update")]
+        [Authorize]
         public Employee UpdateEmployee([FromBody] Employee employee)
         {
             return _employeeService.UpdateEmployee(employee);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("delete/{id}")]
+        [Authorize]
         public void DeleteEmployee(int id)
         {
             _employeeService.DeleteEmployee(id);
         }
-        */
     }
 }
