@@ -12,22 +12,22 @@ namespace EmployeeManagerAPI.Services
          _employeesRepository = employeesRepository;
       }
 
-      public List<Employee> GetEmployees()
+      public List<Empleado> GetEmployees()
       {
          return _employeesRepository.GetEmployees();
       }
 
-      public Employee GetEmployee(int id)
+      public Empleado GetEmployee(int id)
       {
          return _employeesRepository.GetEmployee(id);
       }
 
-      public Employee AddEmployee(Employee employee)
+      public Empleado AddEmployee(Empleado employee)
       {
          return _employeesRepository.AddEmployee(employee);
       }
 
-      public Employee UpdateEmployee(Employee employee)
+      public Empleado UpdateEmployee(Empleado employee)
       {
          return _employeesRepository.UpdateEmployee(employee);
       }

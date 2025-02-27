@@ -13,36 +13,36 @@ namespace EmployeeManagerAPI.Repository
             _context = context;
         }
 
-        public List<Employee> GetEmployees()
+        public List<Empleado> GetEmployees()
         {
-            return _context.Employees.ToList();
+            return _context.Empleado.ToList();
         }
 
-        public Employee GetEmployee(int id)
+        public Empleado GetEmployee(int id)
         {
-            return _context.Employees.FirstOrDefault(e => e.Id == id);
+            return _context.Empleado.FirstOrDefault(e => e.Id == id);
         }
 
-        public Employee AddEmployee(Employee employee)
+        public Empleado AddEmployee(Empleado employee)
         {
-            _context.Employees.Add(employee);
+            _context.Empleado.Add(employee);
             _context.SaveChanges();
             return employee;
         }
 
-        public Employee UpdateEmployee(Employee employee)
+        public Empleado UpdateEmployee(Empleado employee)
         {
-            _context.Employees.Update(employee);
+            _context.Empleado.Update(employee);
             _context.SaveChanges();
             return employee;
         }
 
         public void DeleteEmployee(int id)
         {
-            var employee = _context.Employees.FirstOrDefault(e => e.Id == id);
+            var employee = _context.Empleado.FirstOrDefault(e => e.Id == id);
             if (employee != null)
             {
-                _context.Employees.Remove(employee);
+                _context.Empleado.Remove(employee);
                 _context.SaveChanges();
             }
         }

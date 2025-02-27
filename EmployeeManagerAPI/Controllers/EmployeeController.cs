@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeManagerAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/empleados")]
     [ApiController]
     public class EmployeeController : ControllerBase
     {
@@ -18,35 +18,36 @@ namespace EmployeeManagerAPI.Controllers
 
         [HttpGet]
         [Authorize]
-        public List<Employee> GetEmployees()
+        public List<Empleado> GetEmployees()
         {
             return _employeeService.GetEmployees();
         }
 
         [HttpGet("{id}")]
         [Authorize]
-        public Employee GetEmployee(int id)
+        public Empleado GetEmployee(int id)
         {
             return _employeeService.GetEmployee(id);
         }
 
 
-        [HttpPost("add")]
+        [HttpPost]
         [Authorize]
-        public Employee AddEmployee([FromBody] Employee employee)
+        public Empleado AddEmployee([FromBody] Empleado employee)
         {
             return _employeeService.AddEmployee(employee);
         }
 
 
-        [HttpPut("update")]
+        [HttpPut("{id}")]
         [Authorize]
-        public Employee UpdateEmployee([FromBody] Employee employee)
+        public Empleado UpdateEmployee([FromBody] Empleado employee,int id)
         {
+            employee.Id = id;
             return _employeeService.UpdateEmployee(employee);
         }
 
-        [HttpDelete("delete/{id}")]
+        [HttpDelete("{id}")]
         [Authorize]
         public void DeleteEmployee(int id)
         {

@@ -9,7 +9,7 @@ namespace EmployeeManagerAPI.Model
         public EmployeeManagerDBContext(DbContextOptions<EmployeeManagerDBContext> options) : base(options)
         {
         }
-        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Empleado> Empleado { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

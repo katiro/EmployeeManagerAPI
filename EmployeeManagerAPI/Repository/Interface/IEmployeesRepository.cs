@@ -4,10 +4,10 @@ namespace EmployeeManagerAPI.Repository.Interface
 {
     public interface IEmployeesRepository
     {
-        List<Employee> GetEmployees();
-        Employee GetEmployee(int id);
-        Employee AddEmployee(Employee employee);
-        Employee UpdateEmployee(Employee employee);
+        List<Empleado> GetEmployees();
+        Empleado GetEmployee(int id);
+        Empleado AddEmployee(Empleado employee);
+        Empleado UpdateEmployee(Empleado employee);
         void DeleteEmployee(int id);
     }
     
